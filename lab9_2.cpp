@@ -3,28 +3,29 @@
 #include<string>
 using namespace std;
 
-int findGrade(double score)
+char findGrade(float score)
  {
      if(score > 90)
      {
-        cout << "A";
+        return 'A';
      }
 	 else if(score > 75 && score <= 90)
 	 {
-		cout << "B";
+		return 'B';
 	 }
 	 else if(score > 60 && score <= 75)
 	 {
-		cout << "C";
+		return 'C';
 	 }
 	 else if(score > 45 && score <= 60)
 	 {
-		cout << "D";
+		return 'D';
 	 }
 	 else if(score <= 45)
 	 {
-		cout << "F";
+		return 'F';
 	 }
+	 return 0;
  }
 
 int main(){
@@ -39,9 +40,9 @@ int main(){
 	while(i < N){
 		cout << "Name of student " << i+1 << ": ";
 		cin.ignore();
-		//[Missing Code 2] Get name of the i-th students that may include whitespace.
+		getline(cin , name[i]);
 		cout << "Score of student " << i+1 << ": ";
-		//[Missing Code 3] Get score of the i-th students.
+		cin >> score[i];
 		i++;
 	}
 	
